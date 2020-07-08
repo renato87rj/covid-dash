@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Dashboard</title>
+</head>
+<body class="bg-light">
+  <nav>
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <h1 class="text-center">Dashboard Covid-19</h1>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col col-md-6">
+      <canvas id="countryChart" width="400" height="250"></canvas> 
+    </div>
+    <div class="col col-md-6">
+      <canvas id="rjChart" width="400" height="250"></canvas>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col col-md-10">
+      <canvas id="statesChart" width="400" height="250"></canvas>
+    </div>
+  </div>
+
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- ChartJs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- Meus scripts -->
+  <script src="js/service.js"></script>
+  <script src="js/countryChart.js"></script>
+  <script src="js/rjChart.js"></script>
+  <script src="js/statesChart.js"></script>
+</body>
+</html>
