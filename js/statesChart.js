@@ -1,4 +1,5 @@
 const statesChart = document.querySelector('#statesChart');
+const statesSub = document.querySelector('#statesSub');
 
 service.get('')
 .then(function (response) {
@@ -11,6 +12,7 @@ service.get('')
 
 function renderChartStates(data) {
     const date = new Date(data.data[0].datetime).toLocaleDateString();
+    statesSub.innerHTML = 'Atualizado em ' + date;
     var items = data.data;
     
     barData = {
@@ -52,12 +54,7 @@ function renderChartStates(data) {
         type: 'bar',
         data: barData,
         options: {
-            title: {
-               display: true,
-                text: ['Casos de covid-19 nos estados do Brasil', 'Atualizado em ' + date],
-               fontSize: 22,
-               fontStyle: 'italic'
-            },
+            
         },
         
     });

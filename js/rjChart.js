@@ -1,4 +1,5 @@
 const rjChart = document.querySelector('#rjChart');
+const rjSub = document.querySelector('#rjSub');
 
 service.get('/brazil/uf/rj')
 .then(function (response) {
@@ -11,6 +12,8 @@ service.get('/brazil/uf/rj')
 
 function renderChartState(data) {
     const date = new Date(data.datetime).toLocaleDateString();
+
+    rjSub.innerHTML = 'Atualizado em '+ date;
     const pieData = {
         type: 'doughnut',
         data: {
@@ -32,12 +35,7 @@ function renderChartState(data) {
             }],
         },    
         options: {
-            title: {
-                display: true,
-                text: ['Casos de covid-19 no Rio de Janeiro', 'Atualizado em '+ date],
-                fontSize: 22,
-                fontStyle: 'italic'
-            },
+            
         }
     };
 

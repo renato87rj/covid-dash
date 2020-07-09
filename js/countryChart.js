@@ -1,4 +1,5 @@
 const countryChart = document.querySelector('#countryChart');
+const countrySub = document.querySelector('#countrySub');
 
 service.get('/brazil')
 .then(function (response) {
@@ -11,6 +12,8 @@ service.get('/brazil')
 
 function renderChartCountry(data) {
     const date = new Date(data.updated_at).toLocaleDateString();
+    
+    countrySub.innerHTML = 'Atualizado em ' + date;
     const pieData = {
         type: 'doughnut',
         data: {
@@ -34,12 +37,7 @@ function renderChartCountry(data) {
             }],
         },    
         options: {
-            title: {
-               display: true,
-                text: ['Casos de covid-19 no Brasil', 'Atualizado em ' + date],
-               fontSize: 22,
-               fontStyle: 'italic'
-            },
+            
         }
     };
 
